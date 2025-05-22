@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ремонт двигателя BMW</title>
+  <link rel="stylesheet" href="css/engine-style.css">
+  <!-- Анимация и стили для уведомления -->
+  <style>
+    @keyframes fadeInSlideDown {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    #success-message {
+      display: none;
+      padding: 1em;
+      background: #cce5ff;     /* светло-голубой фон */
+      color: #004085;          /* темно-синий текст */
+      margin-bottom: 1em;
+      border: 1px solid #b8daff; /* граница чуть насыщеннее фона */
+      border-radius: 4px;
+      animation: fadeInSlideDown 0.5s ease-out forwards;
+    }
+    .btn-submit {
+      background: #0056b3;     /* насыщенный синий для активной кнопки */
+      color: #fff;
+      border: none;
+      padding: 0.75em 1.5em;
+      font-size: 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .btn-submit:disabled {
+      background: #ccc;        /* серый для заблокированной кнопки */
+      cursor: not-allowed;
+    }
+    .btn-submit:not(:disabled):hover {
+      background: #00408d;     /* чуть темнее при наведении */
+    }
+    /* Контейнер для скриншота */
+    #screenshot-container {
+      margin-top: 1em;
+      text-align: center;
+    }
+    #screenshot-container img {
+      max-width: 100%;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <!-- Подключаем html2canvas для съёмки скриншота -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <!-- 🔷 Шапка сайта -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="IMG/bmw.svg" alt="Логотип"></a>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html#why">Преимущества</a></li>
+          <li><a href="index.html#services">Услуги</a></li>
+          <li><a href="index.html#look">Наш центр</a></li>
+          <li><a href="index.html#place">Карта</a></li>
+          <li><a href="#footer">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="contacts">
+        <div class="contacts__phone bolder">+7 (999) 999-99-99</div>
+        <a href="#" class="contacts__btn upper bolder">Заказать звонок</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🔧 Контент страницы -->
+  <div class="container">
+    <div class="image-wrapper">
+      <img src="img/maxresdefault.jpg" alt="Ремонт двигателя BMW" width="800" height="500">
+    </div>
+    <h1>Ремонт двигателя BMW</h1>
+    <p>В нашем сервисном центре «Метаморфоза» мы специализируемся на качественном и быстром ремонте двигателя автомобилей BMW. Используем оригинальные запчасти и передовое оборудование, чтобы вернуть вашему автомобилю максимальную производительность и надежность.</p>
+    <h2>Опыт и квалификация</h2>
+    <p>Наши специалисты имеют обширный опыт работы с моторами BMW различных серий — от рядных четырехцилиндровых до мощных V8 и V12. Регулярное обучение и сертификация гарантируют соблюдение строгих стандартов производителя.</p>
+    <h2>Диагностика и точность</h2>
+    <p>Перед началом ремонта проводится полная диагностика двигателя на стенде — измерение компрессии, тест топливной системы и электронных датчиков. Это позволяет точно выявить причину неисправности и спланировать оптимальные ремонтные работы.</p>
+    <h2>Гарантийная поддержка</h2>
+    <p>После завершения ремонта мы оформляем официальный акт выполненных работ и предоставляем письменную гарантию. Вы можете быть уверены в длительной и бесперебойной эксплуатации вашего BMW.</p>
+    <h2>Оригинальные запчасти</h2>
+    <p>Мы используем только оригинальные моторные компоненты BMW или одобренные аналоги высшего качества, что продлевает срок службы двигателя и сохраняет гарантию производителя.</p>
+  </div>
+
+  <!-- Форма записи -->
+  <section class="booking-section">
+    <div class="container">
+      <h2 class="booking-title">ЗАПИСЬ НА СЕРВИС</h2>
+
+      <!-- Блок успеха (скрыт по умолчанию) -->
+      <div id="success-message">
+        Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.
+      </div>
+
+      <form class="booking-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="reason">Причина обращения и автомобиль</label>
+          <select id="reason" name="reason" required>
+            <option disabled selected>Причина обращения</option>
+            <option value="engine">Ремонт двигателя</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="dealer">Дилерский центр, дата и время визита</label>
+          <select id="dealer" name="dealer" required>
+            <option selected>Автосервис "Метаморфоза"</option>
+          </select>
+          <input type="date" name="date" required>
+          <input type="time" name="time" required>
+        </div>
+
+        <div class="form-group">
+          <label>Личные данные</label>
+          <input type="text" name="name" placeholder="Имя *" required>
+          <input type="tel" name="phone" placeholder="Телефон *" required>
+          <input type="email" name="email" placeholder="Email">
+        </div>
+
+        <button type="submit" class="btn-submit" disabled>ОТПРАВИТЬ</button>
+      </form>
+
+      <!-- Контейнер для отображения скриншота -->
+      <div id="screenshot-container"></div>
+    </div>
+  </section>
+
+  <!-- 🔻 Подвал -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer__contacts">
+          <div class="phone">
+            <img src="img/phone.svg" alt="Телефон">
+            <div class="phone__tels">
+              <a href="tel:+79999999999">+7 (999) 999-99-99</a>
+            </div>
+          </div>
+          <div class="contact">
+            <img src="img/pin.svg" alt="Адрес">
+            <div class="contact__text">
+              <span class="accent">Адрес</span><br>г. Ставрополь,<br>ул. Пирогова 5а
+            </div>
+          </div>
+        </div>
+        <div class="footer__info">
+          <div class="time">
+            <img src="img/327976bfd0cb9577dbde4f39840805bd (1).jpg" alt="Режим работы">
+            <div class="time__info">
+              <span class="accent">Режим работы</span><br>ПН - ПТ с 9:00 до 19:00,<br>СБ с 9:00 до 17:00,<br>ВС - выходной
+            </div>
+          </div>
+          <div class="email">
+            <img src="img/email (1).svg" alt="Email">
+            <a href="mailto:lowk9y@gmail.com">lowk9y@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">© Автосервис «Метаморфоза»</div>
+    </div>
+  </footer>
+
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.booking-form');
+      const reasonSelect = document.getElementById('reason');
+      const submitBtn = document.querySelector('.btn-submit');
+      const successMessage = document.getElementById('success-message');
+      const screenshotContainer = document.getElementById('screenshot-container');
+
+      
+      reasonSelect.addEventListener('change', () => {
+        submitBtn.disabled = !reasonSelect.value;
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        successMessage.style.display = 'block';
+
+       
+        setTimeout(() => {
+          html2canvas(successMessage).then(canvas => {
+            screenshotContainer.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = canvas.toDataURL('image/png');
+            screenshotContainer.appendChild(img);
+          });
+        }, 600);
+
+        // Сброс формы и блокировка кнопки
+        setTimeout(() => {
+          form.reset();
+          submitBtn.disabled = true;
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const form           = document.querySelector('.booking-form');
+  const reasonSelect   = document.getElementById('reason');
+  const submitBtn      = document.querySelector('.btn-submit');
+  const successMessage = document.getElementById('success-message');
+  const screenshotRoot = document.getElementById('screenshot-container');
+
+
+  reasonSelect.addEventListener('change', () => {
+    submitBtn.disabled = !reasonSelect.value;
+  });
+
+  form.addEventListener('submit', async ev => {
+    ev.preventDefault();
+    successMessage.style.display = 'block';
+
+    
+    await new Promise(r => setTimeout(r, 600));
+
+ 
+    screenshotRoot.innerHTML = '';
+    const canvas = await html2canvas(successMessage);
+    screenshotRoot.appendChild(canvas);
+
+    await new Promise(r => setTimeout(r, 400));
+
+
+    form.reset();
+    submitBtn.disabled = true;
+    successMessage.style.display = 'none';
+  });
+});
+</script>

@@ -1,0 +1,273 @@
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #2c3f55;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Заголовки */
+h1, h2, h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  color: #1a283a;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.7rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+h2 {
+  font-size: 1.7rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+h3 {
+  font-size: 1.7rem;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Шапка */
+header {
+  background: #f2f2f2;
+  padding: 15px 0 31px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+nav ul li a {
+  color: #1a283a;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 8px 18px;
+  border-radius: 60px;
+  text-decoration: none;
+  animation: fadeIn 1s ease-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+nav ul li a:hover {
+  background: #e2e2e2;
+}
+
+.contacts {
+  text-align: right;
+  animation: fadeIn 1s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: both;
+}
+
+.contacts__phone {
+  font-size: 1.667rem;
+  color: #1a283a;
+  margin-bottom: 14px;
+}
+
+.contacts__btn {
+  font-size: 0.8rem;
+  border: 1px solid #e2e2e2;
+  padding: 10px 25px;
+  color: #1a283a;
+  border-radius: 60px;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.contacts__btn:hover {
+  background: #e2e2e2;
+}
+
+/* Изображение */
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  animation: fadeInUp 1s ease-out;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+}
+.image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Контент */
+div.container > p,
+.details p {
+  font-size: 1rem;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease-out;
+  animation-delay: 0.8s;
+  animation-fill-mode: both;
+}
+
+/* Форма записи */
+.booking-section {
+  background-color: #f2f2f2;
+  padding: 60px 20px;
+  margin-top: 60px;
+  animation: fadeInUp 1s ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+.booking-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #1a283a;
+}
+.booking-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.booking-form label {
+  font-weight: bold;
+}
+.booking-form select,
+.booking-form input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.booking-form input[type="date"],
+.booking-form input[type="time"] {
+  cursor: pointer;
+}
+.btn-submit {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 40px;
+  font-weight: 800;
+  font-size: 1rem;
+  border: 2px solid #1a283a;
+  background: transparent;
+  color: #1a283a;
+  border-radius: 40px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-submit:hover {
+  background-color: #dcdcdc;
+}
+
+/* Футер */
+footer {
+  background-color: #1a283a;
+  color: #ffffff;
+  padding: 40px 0 20px 0;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer__contacts,
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer__contacts img,
+.footer__info img {
+  width: 24px;
+  margin-right: 12px;
+}
+.phone,
+.contact,
+.time,
+.email {
+  display: flex;
+  align-items: flex-start;
+  animation: fadeIn 1s ease-out;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
+}
+.phone__tels a,
+.email a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.phone__tels a:hover,
+.email a:hover {
+  text-decoration: underline;
+}
+.accent {
+  font-weight: bold;
+  color: #f2c94c;
+}
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  color: #cccccc;
+}

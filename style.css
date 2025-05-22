@@ -1,0 +1,590 @@
+/* Базовые стили */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #2c3f55;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Шапка */
+header {
+  background: #f2f2f2;
+  padding: 15px 0 31px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  animation: fadeInUp 1s ease-out;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  animation: fadeInUp 1s ease-out;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #1a283a;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 8px 18px;
+  border-radius: 60px;
+  text-decoration: none;
+  animation: fadeInUp 1s ease-out;
+}
+
+nav ul li a:hover {
+  background: #e2e2e2;
+}
+
+.contacts {
+  text-align: right;
+  animation: fadeInUp 1s ease-out;
+}
+
+.contacts__phone {
+  font-size: 1.667rem;
+  color: #1a283a;
+  margin-bottom: 14px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.contacts__btn {
+  font-size: 0.8rem;
+  border: 1px solid #e2e2e2;
+  padding: 10px 25px;
+  color: #1a283a;
+  border-radius: 60px;
+  text-transform: uppercase;
+  font-weight: 800;
+  text-decoration: none;
+  animation: fadeInUp 1s ease-out;
+}
+
+.contacts__btn:hover {
+  background: #e2e2e2;
+}
+
+/* Первый экран (Hero) */
+.hero {
+  padding: 40px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.col-left {
+  flex: 1;
+  animation: fadeInUp 1s ease-out;
+}
+
+.col-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.header__image-btn {
+  position: relative;
+  width: 800px; /* увеличенный контейнер */
+  height: auto;
+  margin-top: 50px; /* сдвигаем чуть ниже */
+  animation: fadeInUp 1s ease-out;
+}
+
+.main-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Оверлей – в левом нижнем углу, увеличен до 200px */
+.overlay-image {
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Новая фотография rating – в правом верхнем углу, увеличена до 250px */
+.rating-image {
+  position: absolute;
+  width: 250px;
+  top: 0;
+  right: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Секция услуг (иконки в первом экране) */
+.services {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.services__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: none;
+  background: transparent;
+  animation: fadeInUp 1s ease-out;
+}
+
+.services__item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.service-info {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.services__titel {
+  font-size: 1.5rem;
+  color: #1a283a;
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease-out;
+}
+
+.services__text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Заголовок первого экрана */
+.hero h1 {
+  font-size: 3.333rem;
+  text-transform: uppercase;
+  color: #1a283a;
+  font-weight: 800;
+  margin: 80px 0;
+  line-height: 1.2em;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Анимация появления (fadeInUp) */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Секция "Почему нас выбирают" */
+.advantages {
+  background: #f2f2f2;
+  padding: 93px 0 100px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.advantages h2 {
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a283a;
+  margin-left: 30px;
+  position: relative;
+  animation: fadeInUp 1s ease-out;
+}
+
+.advantages h2:before {
+  content: "";
+  display: block;
+  background: #ff6433;
+  width: 9px;
+  height: 28px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: -30px;
+}
+
+.adv {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.adv__item {
+  text-align: center;
+  width: 23%;
+  animation: fadeInUp 1s ease-out;
+}
+
+.adv__img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: fadeInUp 1s ease-out;
+}
+
+.adv__img_first {
+  background-image: url("img2/like.svg");
+  animation: fadeInUp 1s ease-out;
+}
+
+.adv__img_second {
+  background-image: url("img2/services.png");
+  animation: fadeInUp 1s ease-out;
+}
+
+.adv__img_third {
+  background-image: url("img2/parts.png");
+  animation: fadeInUp 1s ease-out;
+}
+
+.adv__img_fouth {
+  background-image: url("img2/comfort.png");
+  animation: fadeInUp 1s ease-out;
+}
+
+.adv__title {
+  font-size: 1rem;
+  margin-top: 10px;
+  text-transform: uppercase;
+  color: #1a283a;
+  font-weight: 800;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Секция "Какие услуги мы оказываем" */
+.service-section {
+  padding: 93px 0 130px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.service-section h2 {
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a283a;
+  margin-left: 30px;
+  position: relative;
+  animation: fadeInUp 1s ease-out;
+}
+
+.service-section h2:before {
+  content: "";
+  display: block;
+  background: #ff6433;
+  width: 9px;
+  height: 28px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: -30px;
+}
+
+.main__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.main__grid-block {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #1a283a;
+  font-size: 1.2rem;\n  font-weight: 600;
+  animation: fadeInUp 1s ease-out;
+}
+
+.main__arrow {
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #1a283a;
+  transition: transform 0.3s ease;
+  animation: fadeInUp 1s ease-out;
+}
+
+.main__arrow:hover {
+  transform: scale(1.05);
+}
+
+.main__arrow::after {
+  content: "→";
+  margin-left: 10px;
+}
+
+/* Галерея */
+.gallery {
+  padding: 93px 0 100px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.gallery h2 {
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a283a;
+  margin-left: 30px;
+  position: relative;
+  animation: fadeInUp 1s ease-out;
+}
+
+.gallery h2:before {
+  content: "";
+  display: block;
+  background: #ff6433;
+  width: 9px;
+  height: 28px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: -30px;
+}
+
+.photos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.photos img {
+  width: 32%;
+  height: auto;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Карта */
+.map-section {
+  padding: 60px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.map-section h2 {
+  text-transform: uppercase;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1a283a;
+  margin-left: 30px;
+  position: relative;
+  animation: fadeInUp 1s ease-out;
+}
+
+.map-section h2:before {
+  content: "";
+  display: block;
+  background: #ff6433;
+  width: 9px;
+  height: 28px;
+  position: absolute;
+  margin-top: 8px;
+  margin-left: -30px;
+}
+
+/* Футер */
+footer {
+  background: #f2f2f2;
+  padding: 20px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out;
+}
+
+.footer__contacts,
+.footer__info {
+  display: flex;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s ease-out;
+}
+
+.phone,
+.contact,
+.time,
+.email {
+  margin: 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.phone__tels a,
+.contact__text,
+.time__info,
+.email a {
+  font-size: 1rem;
+  color: #1a283a;
+  animation: fadeInUp 1s ease-out;
+}
+
+.accent {
+  font-weight: 800;
+  animation: fadeInUp 1s ease-out;
+}
+
+.gray-section {
+  background-color: #f2f2f2;
+  padding: 93px 0 100px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.diagnostics-img {
+  display: block;
+  width: 150px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.engine-img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.steering-img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.antifreeze-img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.exhaust-img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.radiator-img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.brake-img {
+  display: block;
+  width: 170px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+.chassis-img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 10px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Серый бордер и плавное состояние для 8 кнопок блока "Какие услуги мы оказываем" */
+.main__grid-block {
+  border: 1px solid #ccc;
+  border-radius: 8px;           /* по желанию скругление */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* При наведении фон становится оранжевым, текст — белым */
+.main__grid-block:hover {
+  background-color: #ff6433;
+  color: #fff;
+}
+
